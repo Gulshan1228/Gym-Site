@@ -4,44 +4,45 @@
     box-sizing: border-box;
 }
 button{
-    transition: all 1s ease-out;
+    transition: all 0.5s ease;
 }
 div{
     /* border: 2px solid red; */
     color: white;
 }
-.left img{
-    filter: grayscale(200%);
-}
 body{
     background-image: url('pics/bg.jpg');
     background-size: 100% ;
     background-repeat: no-repeat;
-    font-family: cursive;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
 }
-.left{
-    width: 100px;
-    display: inline-block;
-    position: absolute;
-    left: 25px;
-    top: 10px;
+
+
+
+/* head CSS  */
+.head{
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
 }
-.mid{
-    width: 600px;
-    margin: 25px auto;
+.left img{
+    filter: grayscale(200%);
+    width: 65px;
+    mix-blend-mode: multiply;
+    margin-top: -30px;
 }
-.right{
-    width: 100px;
-    display: inline-block;
-    position: absolute;
-    right: 10px;
-    top: 10px;
+.left p{
+    text-align: center;
 }
+.left h4{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 0.5mm;
+}
+
 .mid li a{
     text-decoration: none;
-    color: aliceblue;
-    transition: all 1s ease-out;
-
+    color: white;
+    transition: all 0.5s ease;
 }
 .mid li{
     display: inline-block;
@@ -49,33 +50,50 @@ body{
 }
 .mid li a:hover,.mid li a:active{
     text-decoration: underline;
-    /* color: rgba(128, 0, 128, 0.5); */
-    color: white;
+    color: #5390d9;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    margin-top: -15px;
 }
 .right button{
     color: white;
-    background-color: rgba(0, 50, 255, 0.2);
+    background-color: #5390d9;
     border: none;
-    padding: 5px;
-    margin: 2px;
-    border-radius: 5px;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
     width: 100px;
-    font-family: cursive;
+}
+.right button:hover{
+    background-color: #5e60ce;
+    box-shadow: 0px 2px 2px 1px grey;
+    transform: translateY(-3px);
+}
+.right button:active{
+    box-shadow: 0px 0px 0px 0px gray;
+    transform: translateY(0px);
 }
 
 
+/* Mian container index.html */
+
 .container{
-    margin-top: 50px;
+    margin-top: 20px;
     margin-left: 100px;
     width: 400px;
-    height: 450px;
+    height: max-content;
     border-radius: 20px;
+    padding: 25px;
     border: 2px solid grey;
     /* background: linear-gradient(purple,lightblue,blue); */
     text-align: center;
 }
-.container h3{
+.container h4{
     padding: 20px;
+    letter-spacing: 0.1rem;
 }
 .container div input{
     width: 80%;
@@ -83,32 +101,49 @@ body{
     margin-top: 20px;
     text-align: center;
     background: transparent;
+    border: none;
     border-bottom: 1px solid white;
-    border-right: 2px solid white;
-    border-radius: 10px;
-    border-bottom-right-radius: 100px;
-    border-top: none;
-    border-left: none;
+    border-bottom-right-radius: 10px;
+    outline: 0;
+}
+.container textarea{
+    margin-top: 20px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    color: white;
+    border-bottom: 1px solid white;
+    border-bottom-right-radius: 10px;
+    outline: 0;
+    font-family:Arial, Helvetica, sans-serif
 }
 .container div button{
     width: 30%;
     height: 35px;
-    margin-top: 40px;
-    border-radius: 5px;
+    margin: 0px 20px ;
+    margin-top: 30px;
+    border-radius: 10px;
     color: white;
-    background-color: rgba(0, 50, 255, 0.2);
-    border: none;
-}
-button:hover, form button:hover{
-    background-color:  rgb(0, 50, 255);
-}
-input{
-    color: aliceblue;
-}
-input:focus{
+    background-color: #5390d9;
     border: none;
 }
 
+.container div button:hover{
+    background-color: #5e60ce;
+    box-shadow: 0px 2px 2px 1px grey;
+    transform: translateY(-3px);
+}
+.container div button:active{
+    box-shadow: 0px 0px 0px 0px gray;
+    transform: translateY(0px);
+}
+
+input{
+    color: white;
+}
+
+
+/* Foote CSS section */
 footer{
     height: max-content;
     background-color: black;
@@ -119,15 +154,15 @@ footer{
     margin: auto;
     margin-top: 50px;
     padding: 50px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     box-sizing: border-box;
 }
 footer .imgcontainer{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 footer img{
-    height: 100px;
+    height: 80px;
     opacity: 90%;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -136,7 +171,9 @@ footer img:hover{
     opacity: 100%;
 }
 .social-icon{
-    font-size: 30px;
+    font-size: 22px;
+    padding-top: 5px;
+    padding-left: 50px;
 }
 .social-icon a{
     text-decoration: none;
@@ -148,9 +185,17 @@ footer img:hover{
     display: flex;
     justify-content: space-between;
 }
+.footinfo i{
+    transition: all 0.5s ease;
+    padding: 0px 10px;
+}
+.footinfo i:hover{
+    color: #5390d9;
+}
 .copyright{
     font-size: 12px;
     font-weight: lighter;
+    letter-spacing: 0.2mm;
 }
 
 
@@ -159,11 +204,19 @@ footer img:hover{
 
 /* css for about us page */
 
+.container p:nth-child(1),.container p:nth-child(3){
+    font-size: 25px;
+    padding: 1.5rem;
+}
+
+/* services  */
+
 .ourservices{
     margin: auto;
+    padding: 10px;
     font-size: 25px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 100px;
     font-size: 30px;
     background-color: black;
     width: 100%;
@@ -176,36 +229,34 @@ footer img:hover{
     justify-content: space-evenly;
     color: white;
     background-color: transparent;
-    width: 98%;
-    margin: auto;
     font-weight: lighter;
+    padding: 100px;
+    padding-top: 10px;
 }
+.service-section{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 25px;
+    font-size: 1.5rem;
+}
+
+
 .service1{
-    height: 500px;
-    width: 200px;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-position: center;
     background-image: url('pics/service1.pnd.PNG');
 }
 .service2{
-    height: 500px;
-    width: 200px;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-position: center;
     background-image: url('pics/service2.png');
 }
 .service3{
-    height: 500px;
+    background-image: url('pics/service3.png');
+}
+.service{
+    transition: all 0.2s ease;
+    height: 250px;
     width: 200px;
     text-align: center;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('pics/service3.png');
-}
-.service{
-    transition: all 1s ease-out;
 }
 .service:hover{
     transform: translateY(-10px);
@@ -214,7 +265,7 @@ footer img:hover{
     margin-top: 70px;
 }
 .serviceatgym{
-    background: linear-gradient(180deg,rgb(0, 0, 255),black);
+    background: linear-gradient(180deg,#5e60ce,black);
     width: 98%;
     margin: auto;
     border-top-left-radius: 20px;
@@ -232,24 +283,49 @@ footer img:hover{
     font-size: 30px;
 }
 .fitnesscalculator input{
-    width: 60%;
+    width: 80%;
     margin: auto;
     margin-top: 15px;
     margin-bottom: 10px;
     padding: 10px;
     background: transparent;
-    border-bottom: 2px solid white;
-    border-bottom-right-radius: 25px;
+    border: 0;
+    border-bottom: 1px solid white;
+    border-bottom-right-radius: 5px;
+    outline: 0;
 }
 .fitnesscalculator button{
-    width: 120px;
-    font-size: 25px;
+    width: 150px;
+    font-size: 18px;
     margin: auto;
     padding: 5px;
     color: white;
-    background-color: rgba(0, 50, 255, 0.2);
-    border-radius: 25%;
+    border-radius: 10px;
     border: none;
     margin-top: 25px;
     margin-bottom: 20px;
+    background-color: #5390d9;
 }
+.fitnesscalculator button:hover{
+    background-color: #5e60ce;
+    box-shadow: 0px 2px 2px 1px grey;
+    transform: translateY(-3px);
+}
+.fitnesscalculator button:active{
+    box-shadow: 0px 0px 0px 0px gray;
+    transform: translateY(0px);
+}
+
+
+
+/* Contact us page CSS */
+.container table{
+    margin-top: 50px ;
+    font-size: 17px;
+    padding: 5px 0px;
+}
+.container table td {
+    text-align: start;
+    padding: 5px 0px;
+}
+
