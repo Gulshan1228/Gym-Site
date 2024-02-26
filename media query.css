@@ -81,7 +81,7 @@
 .left img {
     filter: grayscale(200%);
     width: 50px;
-    mix-blend-mode: multiply;
+    mix-blend-mode: color-burn;
     margin-top: -25px;
 }
 .head{
