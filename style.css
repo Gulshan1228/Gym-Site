@@ -20,6 +20,14 @@ body{
 
 
 /* head CSS  */
+
+#menu-icon,#menu{
+    display: none;
+}
+.tabs .tabs-buttons{
+    display: none;
+}
+
 .head{
     display: flex;
     justify-content: space-around;
