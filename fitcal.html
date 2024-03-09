@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="media query.css">
     <link rel="icon" type="image/png" href="pics/logo.png">
 
+    <style>
+      input{
+        text-align: center;
+      }
+    </style>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -45,12 +51,12 @@
     </div>
 
     <div class="container" style="height: 380px">
-      <form action="" class="fitnesscalculator">
+      <form action="#" class="fitnesscalculator">
         <p>body Mass Index Calculator</p>
-        <input type="text" placeholder="Your Body Weight " id="Weight" />
-        <input type="text" placeholder="Height in cm" id="height" />
-        <button onclick="calculateBMI()">Go!</button>
-        <div><textarea name="result" id="result" cols="38" rows="1" placeholder="Result"></textarea></div>
+        <input type="text" placeholder="Body Weight (kg) " id="weight" />
+        <input type="text" placeholder="Height (Cm)" id="height" />
+        <button class="btn">Go!</button>
+        <input type="text" placeholder="Result" id="result" />
       </form>
     </div>
 
@@ -80,14 +86,61 @@
       </div>
     </footer>
   </body>
+
+
   <script>
     // This is JavaScript code for calculating BMI in our site
-    function calculateBMI(a,b) {
-      let w = document.getElementById("weight").value;
-      let h = parseInt(document.getElementById("height").value);
-      console.log(w);
-      console.log(h);
+    
+    let height = document.querySelector("#height")
+    let weight = document.querySelector("#weight")
+    let result = document.querySelector("#result")
+    let btn = document.querySelector(".btn")
+
+   btn.addEventListener("click" , () => {
+
+    // console.log(height.value, weight.value)     // value will use insteed of innerText Etc caouse of input variable 
+
+    if( height.value == '' && weight.value =='' ){
+      alert("Enter Both Details !")
+    } else if (height.value == ''){
+      alert("Enter Height Please")
+    } else if (weight.value==''){
+      alert("Enter Weight Please")
+    } else if (height.value == NaN || weight.value == NaN){
+      alert("Details Has to be in Numbers Only")
+    } else {
+      let res = weight.value /( ( height.value * 0.01 )**2 )
+      res = res.toFixed(3)                                          //Tofixed() short the float number but convert into string
+
+      let final_result = Number(res)                                //Number() converts string into number
+      console.log(typeof(final_result),final_result,"First")
+      result.value = final_result 
+
+      
+
+      //Show Range
+    let bmi = Number(result.value)
+    console.log(bmi,typeof(bmi),"second")
+      
+    if(bmi.value = ""){
+      console.log("Gulshan singh")
+    } else if(bmi < 18.5){
+      alert(`You are in Underweight Range`)
+    } else if(bmi < 24.9){
+      alert(`You are in Healthy Weight Range`)
+    } else if(bmi < 29.9){
+      alert(`You are in Overweight Range`)
+    }else{
+      alert(`You are in Obese Range`)
+    } 
+
+
+    result.value = final_result 
     }
+  })
+  
+  
+    
 
   </script>
 </html>
